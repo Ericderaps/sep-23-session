@@ -11,6 +11,12 @@
         - ca-certificates
         - curl
         - gnupg
+        - python3-pip
+
+    - name: Install PIP modules for Docker
+      pip:
+        name: docker
+
     - name: Add GPG Key
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
@@ -31,4 +37,8 @@
         - containerd.io
         - docker-buildx-plugin
         - docker-compose-plugin
-        
+
+    - name: Running First Container
+      docker_container:
+        name: myfirstcontainer
+        image: hello-world
