@@ -1,0 +1,7 @@
+- name: My Playbook
+  hosts: "{{ servers }}"
+
+  tasks:
+    - name: Print
+      debug:
+        msg: Hi from Ansible  
