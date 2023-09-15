@@ -7,7 +7,11 @@
   tasks:
     - name: Print-1
       debug:
-        msg: Hi from Ansible        
+        msg: Hi from Ansible
     - name: Print-2
       debug:
-        msg: Hi from {{ user }} 
+        msg: Hi from {{ user }}
+    - name: Print-3 With Condition
+      debug:
+        msg: Executing it as condition is met.
+      when: user == "Kishore"
