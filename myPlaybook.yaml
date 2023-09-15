@@ -1,7 +1,13 @@
 - name: My Playbook
   hosts: "{{ servers }}"
 
+  vars:
+    user: kul
+
   tasks:
-    - name: Print
+    - name: Print-1
       debug:
-        msg: Hi from Ansible  
+        msg: Hi from Ansible        
+    - name: Print-2
+      debug:
+        msg: Hi from {{ user }} 
