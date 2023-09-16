@@ -13,6 +13,11 @@
       with_items:
         - default-jdk
 
+    - name: Create keyring
+      file:
+        state: touch
+        path: "{{ keyring }}"
+
     - name: Add GPG Key
       apt_key:
         url: https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
