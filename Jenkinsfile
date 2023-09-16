@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage ('Configure Environment') {
       steps {
-        sh 'ansible-playbook myPlaybook.yaml'
+        sh 'ansible-playbook myPlaybook.yaml --extra-vars "servers=all"'
       }
     }
   }
